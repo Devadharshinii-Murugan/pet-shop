@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Shop</title>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Poppins:400,600,700&display=swap' rel='stylesheet'>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f0f4f8;
+            color: #333;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            background: linear-gradient(to right, #6a11cb, #2575fc);
+            padding: 1rem 0;
+            align-items: center;
+            color: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        header nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            margin: 1rem 0;
+        }
+
+        header nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1rem;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        header nav ul li a:hover {
+            color: #ffda79;
+        }
+
+        header form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        header form input[type="search"] {
+            padding: 0.5rem;
+            font-size: 1rem;
+            border-radius: 20px;
+            border: none;
+            outline: none;
+        }
+
+        header form button {
+            padding: 0.5rem 1rem;
+            font-size: 1rem;
+            border: none;
+            border-radius: 20px;
+            background-color: #ff6347;
+            color: #fff;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        header form button:hover {
+            background-color: #e55335;
+        }
+
+        .hero {
+            width: 100%;
+            background: url('images/hero-image.jpg') no-repeat center center;
+            background-size: cover;
+            color: black;
+            text-align: center;
+            padding: 6rem 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero button {
+            background-color: #ff6347;
+            border: none;
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .hero button:hover {
+            background-color: #e55335;
+        }
+
+        .featured-products {
+            padding: 2rem;
+            text-align: center;
+            background-color: #fff;
+            width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 2rem;
+        }
+
+        .featured-products h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Playfair Display', serif;
+            font-weight: 700;
+        }
+
+        .product-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+        }
+
+        .product {
+            border-radius: 10px;
+            padding: 1rem;
+            width: calc(33% - 1.5rem);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .product:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        .product h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .product p {
+            font-size: 1.2rem;
+            color: #ff6347;
+        }
+
+        .footer {
+            width: 100%;
+            background-color: #333;
+            text-align: center;
+            padding: 1rem 0;
+            color: #fff;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .reviews {
+            background: linear-gradient(to left, rgb(85, 154, 183), rgb(114, 176, 121));
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .reviews h2 {
+            text-align: center;
+            font-family: 'Sonsie One', cursive;
+            margin-bottom: 20px;
+        }
+        .about-pets {
+            border-radius: 10px;
+            padding: 200px; /* Adjusted padding */
+            margin: 20px;
+            background: linear-gradient(to left, rgb(85, 154, 183), rgb(114, 176, 121));
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .main-two {
+            display: flex;
+            width: 100%;
+            gap: 10px;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Pet Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Shop</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+        </nav>
+        <form>
+            <input type="search" placeholder="Search">
+            <button type="submit">Go</button>
+        </form>
+    </header>
+
+    <section class="hero">
+        <h2>Welcome to Pet Shop</h2>
+        <p>Your one-stop shop for all your pet's needs!</p>
+        <button>Shop Now</button>
+    </section>
+
+    <section class="featured-products">
+        <h2>Featured Products</h2>
+        <div class="product-grid">
+            <a href="https://www.mrnmrspet.com/dogs-for-sale" class="product" target="_blank">
+                <img src="goldenretriver.jpeg" alt="Dog">
+                <h3>Dog</h3>
+                <p>$29.99</p>
+            </a>
+            <a href="https://mycatshop.in/" class="product" target="_blank">
+                <img src="cat.jpeg" alt="Cat">
+                <h3>Cat</h3>
+                <p>$24.99</p>
+            </a>
+            <a href="https://expomx.in/bird-shop-1" class="product" target="_blank">
+                <img src="parrot.jpeg" alt="Parrot">
+                <h3>Parrot</h3>
+                <p>$19.99</p>
+            </a>
+        </div>
+    </section>
+    <div class="main-two">
+        <div class="reviews">
+            <h3>Customer Reviews</h3>
+            <h4>Jane Doe</h4>
+            <p>"Paws & Tails is absolutely amazing! I adopted my puppy, Max, from here, and the staff was incredibly helpful and knowledgeable. They made sure I had everything I needed to take care of him. Highly recommend!"</p>
+            <h4>John Smith</h4>
+            <p>"The best pet shop in town! They have a wide variety of pets and the staff is super friendly. I got my parrot, Polly, from Paws & Tails, and she has been a wonderful addition to our family. Great experience overall!"</p>
+            <h4>Emily Johnson</h4>
+            <p>"I love Paws & Tails! The store is clean, and the pets are well taken care of. I recently bought a kitten, Luna, and she is healthy and playful. The staff gave me excellent advice on how to care for her. Thank you!"</p>
+            <h4>Michael Brown</h4>
+            <p>"I had a fantastic experience at Paws & Tails. The customer service is top-notch, and they genuinely care about the animals. I got my rabbit, Thumper, from here, and he is the happiest little bunny. Will definitely come back for all my pet needs."</p>
+            <center><h3>Interested in Buying a Pet?</h3></center>
+            <center>
+                <p>If you are interested in buying a pet or want more information about our available pets, feel free to reach out to us. Our friendly staff is here to assist you and answer any questions you may have.</p>
+                <p><strong>Contact Us:</strong><br>
+                Email: dhaaranishanmugam224@gmail.com<br>
+                Phone: +1 234 567 890</p>
+                <p>Visit us at:<br>
+                Paws & Tails Pet Shop<br>
+                1234 Pet Lane<br>
+                Petville, PA 12345</p>
+                <p>We look forward to helping you find your perfect pet!</p>
+            </center>
+        </div>
+        <div class="about-pets">
+            <h3>About Pets</h3>
+        </div>
+    </div>
+    <footer class="footer">
+        <p>&copy; 2024 Meatly Pet Shop. All rights reserved.</p>
+    </footer>
+</body>
+</html>
